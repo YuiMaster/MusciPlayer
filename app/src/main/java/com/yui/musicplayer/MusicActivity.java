@@ -3,6 +3,10 @@ package com.yui.musicplayer;
 import android.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
+
+import com.yui.musicplayer.binding.Bind;
+import com.yui.musicplayer.binding.ViewBinder;
 
 /**
  * 音乐播放器主页面
@@ -15,11 +19,17 @@ import android.os.Bundle;
  */
 public class MusicActivity extends AppCompatActivity {
 
+    @Bind(R.id.txt)
+    TextView mTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         hideActionbar();
         setContentView(R.layout.activity_music);
+        ViewBinder.bind(this);
+        mTextView.setText("我的老家");
+
     }
 
     /**
